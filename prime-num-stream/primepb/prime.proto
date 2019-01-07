@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package main;
+option go_package="primepb";
+
+message PrimeRequest {
+	int32 num = 1;
+}
+
+message PrimeResponse {
+	int32 num = 1;
+}
+
+service PrimeService {
+	rpc Prime(PrimeRequest) returns (stream PrimeResponse) {};
+}
