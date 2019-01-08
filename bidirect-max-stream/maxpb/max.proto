@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package main;
+option go_package="maxpb";
+
+message Request {
+	int64 num = 1;
+}
+
+message Response {
+	int64 num = 1;
+}
+
+service MaxService {
+	rpc Max(stream Request) returns (stream Response) {};
+}
